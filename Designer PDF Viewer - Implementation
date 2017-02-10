@@ -1,0 +1,41 @@
+//https://www.hackerrank.com/challenges/designer-pdf-viewer
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        
+        char [] acbArr = {'a','b','c','d','e','f','g',
+                          'h','i','j','k','l','m','n', 
+                          'o','p','q','r','s','t','u', 
+                          'v','w','x','y','z'};
+        
+        int[] heightArr = new int[26];
+        int height = 0;
+        
+        for(int h_i=0; h_i < 26; h_i++)
+        { heightArr[h_i] = in.nextInt(); }
+        
+        String word = in.next();
+        
+        for(int x = 0; x < word.length(); x++)
+        {
+            for(int y = 0; y < acbArr.length; y++)
+             { 
+                 if( word.charAt(x) == acbArr[y] && height < heightArr[y])
+                  {   
+                        height = heightArr[y];
+                  }
+             }
+        }
+        
+        System.out.println(word.length() * height);
+    }
+}
