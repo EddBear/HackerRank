@@ -1,2 +1,2 @@
 # HackerRank
-This is a hackerrank exercises
+This is are my hackerrank solutions to some exercises
