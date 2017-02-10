@@ -1,0 +1,47 @@
+//https://www.hackerrank.com/challenges/circular-array-rotation
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int q = in.nextInt();
+        int[] firstArr = new int[n];
+        for(int a=0; a < n; a++){
+            firstArr[a] = in.nextInt();
+        }
+       
+       
+        
+        if(k > firstArr.length)
+            k = k % firstArr.length;
+        
+        int[] secArr = new int[firstArr.length];
+        
+        for(int c=0; c < k; c++)
+        { secArr[c] = firstArr[firstArr.length-k+c]; }
+        
+        int e=0;
+        for(int d = k; d < firstArr.length; d++)
+         {   secArr[d] = firstArr[e];
+             e++;
+         }
+        
+        
+           for(int b = 0; b < q; b++){
+            int m = in.nextInt();
+               System.out.println(secArr[m]);
+        }
+       
+       // for(int f = 0; f < q; f++){
+        
+        
+    }
+}
