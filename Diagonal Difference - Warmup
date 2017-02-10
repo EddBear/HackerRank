@@ -1,0 +1,36 @@
+//https://www.hackerrank.com/challenges/diagonal-difference
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+         Scanner scan = new Scanner(System.in);
+	     int matrixSize = scan.nextInt();
+	     int [][] mrMatrix = new int[matrixSize][matrixSize];
+        
+        int sumEins = 0, sumZwei = 0, result = 0;
+            
+        for(int i=0; mrMatrix.length > i; i++ )
+	     {	for(int j=0; mrMatrix.length > j; j++)
+	    	{
+	    		mrMatrix[i][j] = scan.nextInt();
+	    	}
+         }
+        
+         for(int x=0; mrMatrix.length > x; x++)
+	     {
+	    	 sumEins = mrMatrix[x][x] + sumEins;
+	    	 sumZwei = mrMatrix[x][mrMatrix.length-(x+1)] + sumZwei;
+	     }
+        
+        result = sumEins-sumZwei;
+            
+         System.out.println(Math.abs(result)); // <---- Good one, forgot abs function x)
+    }
+}
