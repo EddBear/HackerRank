@@ -1,0 +1,43 @@
+//https://www.hackerrank.com/challenges/time-conversion
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner sc = new Scanner(System.in);
+		String strPM = sc.next();
+
+		///String strPM = "08:12:12PM";
+		String strToSum="";
+		int intTo24 = 0;
+		final int twelve = 12;
+		char[] charTo24 = strPM.toCharArray();
+
+		if( charTo24[8] == 'A' && charTo24[0] =='1' && charTo24[1] =='2')
+		{
+			charTo24[0] = '0';
+			charTo24[1] = '0';
+		}
+
+		if(charTo24[8] == 'P' && (charTo24[1] !='2' ||  charTo24[0] =='0'))
+		{
+			strToSum = String.valueOf(charTo24[0]);
+			strToSum = strToSum + String.valueOf(charTo24[1]);
+
+			intTo24 = Integer.parseInt(strToSum)+ twelve;
+
+			charTo24[0] = Integer.toString(intTo24).charAt(0);
+			charTo24[1] = Integer.toString(intTo24).charAt(1);
+		}
+
+		String strConverted = new String( Arrays.copyOf(charTo24, 8) );
+		System.out.println(strConverted);
+        
+
+    }
+}
