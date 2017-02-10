@@ -1,0 +1,56 @@
+//https://www.hackerrank.com/challenges/mini-max-sum
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        /*long a = in.nextLong();
+        long b = in.nextLong();
+        long c = in.nextLong();
+        long d = in.nextLong();
+        long e = in.nextLong();*/
+         
+       
+            long[] longArr = new long[5]; 
+            long[] theSum = new long[5];
+            long longSum = 0;
+        
+            for(int z=0; z < longArr.length; z++)
+            longArr[z]= in.nextLong();
+           
+            for (long i : longArr)
+            longSum += i;
+                    
+            long min = longSum - longArr[0];
+            long max = longSum - longArr[0];
+            
+            for(int x=0; x < longArr.length; x++)
+            {
+                long newSum = longSum;
+                
+                newSum-=longArr[x];
+                theSum[x] = newSum;
+                
+                if(theSum[x] > max)
+                {
+                    max = theSum[x];
+                }
+                    
+                if(theSum[x] < min)
+                {
+                    min = theSum[x];
+                }
+            }          
+            
+            System.out.println( min + " " + max);
+        
+        
+    }
+}
