@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int newArr[] = new int[scan.nextInt()];
+        int newSum = 0;
+        
+        for(int i=0; newArr.length > i; i++)
+        {
+            newSum = scan.nextInt() + newSum;
+        }
+        
+        System.out.print(newSum);
+        
+    }
+}
